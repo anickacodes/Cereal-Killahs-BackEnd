@@ -22,8 +22,8 @@ const getCereal = async (id) => {
 const createCereal = async (cereal) => {
     try {
         const newCereal = await db.one(
-            "INSERT INTO cereals (name, brand, Type, price, is_favorite) VALUES ($1, $2, $3, $4, $5) RETURNING *",
-            [cereal.name, cereal.brand, cereal.Type, cereal.price, cereal.is_favorite]
+            "INSERT INTO cereals (name, brand, Type, price, is_favorite, rating) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
+            [cereal.name, cereal.brand, cereal.Type, cereal.price, cereal.is_favorite, cereal.rating]
         )
         return newCereal
     } catch (error) {
@@ -43,8 +43,8 @@ const deleteCereal = async (id) => {
 const updateCereal = async (id, cereal) => {
     try {
         const updatedCereal = await db.one(
-            "UPDATE cereals SET name=$1, brand=$2, Type=$3, price=$4, is_favorite=$5 WHERE id=$6 RETURNING *",
-            [cereal.name, cereal.brand, cereal.Type, cereal.price, cereal.is_favorite, id]
+            "UPDATE cereals SET name=$1, brand=$2, Type=$3, price=$4, is_favorite=$5, rating=$6 WHERE id=$7 RETURNING *",
+            [cereal.name, cereal.brand, cereal.Type, cereal.price, cereal.is_favorite, cereal.rating, id]
         )
         return updatedCereal;
     } catch (error) {
