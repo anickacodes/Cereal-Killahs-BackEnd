@@ -1,3 +1,5 @@
+//db:seed 
+
 \c cereals;
 
 INSERT INTO cereals (name, brand, Type, price, is_favorite) VALUES
