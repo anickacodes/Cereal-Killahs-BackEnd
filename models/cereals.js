@@ -31,8 +31,18 @@ const createCereal = async (cereal) => {
     }
 }
 
+const deleteCereal = async (id) => {
+    try {
+        const deletedCereal = await db.one("DELETE FROM cereals WHERE id=$1 RETURNING *", id)
+        return deletedCereal
+    } catch (error) {
+        return error
+    }
+}
+
 module.export = {
     getAllCereals,
     getCereal,
-    createCereal
+    createCereal,
+    deleteCereal
 }
