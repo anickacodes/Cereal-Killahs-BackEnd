@@ -1,5 +1,9 @@
 const express = require("express");
-
+const { getAllCereals,
+    getCereal,
+    createCereal,
+    deleteCereal,
+    } = require('../models/cereals')
 const cereals = express.Router();
 
 cereals.get("/", async (req, res) => {
