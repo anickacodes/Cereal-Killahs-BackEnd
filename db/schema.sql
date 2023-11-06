@@ -8,6 +8,6 @@ id SERIAL PRIMARY KEY,
 name TEXT NOT NULL,
 brand TEXT NOT NULL,
 Type TEXT,
-price number,
+price NUMERIC,
 is_favorite BOOLEAN
 );
