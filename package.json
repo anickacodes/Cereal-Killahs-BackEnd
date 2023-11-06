@@ -1,4 +1,19 @@
 {
+  
+  "name": "cereal-killahs-backend",
+  "version": "1.0.0",
+  "description": "Cereal Killahs Inventory",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "db:init": "psql -U postgres -f db/schema.sql",
+    "db:seed": "psql -U postgres -f db/seed.sql"
+  },
+  "keywords": [],
+  "author": "Anicka Lewis & Kenneth Parker",
+  "license": "ISC",
+
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
