@@ -40,9 +40,23 @@ const deleteCereal = async (id) => {
     }
 }
 
+const updateCereal = async (id, cereal) => {
+    try {
+        const updatedCereal = await db.one(
+            "UPDATE cereals SET name=$1, brand=$2, Type=$3, price=$4, is_favorite=$5 WHERE id=$6 RETURNING *",
+            [cereal.name, cereal.brand, cereal.Type, cereal.price, cereal.is_favorite, id]
+        )
+        return updatedCereal;
+    } catch (error) {
+        return error;
+    }
+}
+
+
 module.export = {
     getAllCereals,
     getCereal,
     createCereal,
-    deleteCereal
+    deleteCereal,
+    updateCereal
 }
