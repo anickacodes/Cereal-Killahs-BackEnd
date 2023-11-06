@@ -7,6 +7,7 @@ const {
   updateCereal,
 } = require("../models/cereals");
 const cereals = express.Router();
+const { checkName, checkBrand, checkBoolean } = require('../validations/checkCereals')
 
 cereals.get("/", async (req, res) => {
   const allCereals = await getAllCereals();
@@ -27,12 +28,12 @@ cereals.get("/:id", async (req, res) => {
   }
 });
 
-cereals.post("/", async (req, res) => {
+cereals.post("/", checkName, checkBrand, checkBoolean, async (req, res) => {
   const postCereal = await createCereal(req.body);
   res.status(200).json(postCereal);
 });
 
-cereals.put("/:id", async (req, res) => {
+cereals.put("/:id", checkName, checkBrand, checkBoolean, async (req, res) => {
   const id = req.params.id;
   const body = req.body;
   const updatedCereal = await updateCereal(id, body);
