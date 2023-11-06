@@ -53,7 +53,7 @@ const updateCereal = async (id, cereal) => {
 }
 
 
-module.export = {
+module.exports = {
     getAllCereals,
     getCereal,
     createCereal,
