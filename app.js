@@ -10,7 +10,11 @@ app.use(express.json())
 app.use('/cereals', cerealsController)
 
 app.get('/', (req,res) => {
-    res.send('What did the Honey Bunches of Oats Bee say to the Corn Flakes Hen?')
+    res.status(200).send('What did the Honey Bunches of Oats Bee say to the Corn Flakes Hen?')
+})
+
+app.get('*', (req, res) => {
+    res.status(404).send('Error: Invalid Route')
 })
 
 module.exports = app 
