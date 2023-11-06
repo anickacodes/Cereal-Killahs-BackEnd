@@ -22,8 +22,8 @@ const getCereal = async (id) => {
 const createCereal = async (cereal) => {
     try {
         const newCereal = await db.one(
-            "INSERT INTO cereals (name, brand, Type, price, is_favorite, rating) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
-            [cereal.name, cereal.brand, cereal.Type, cereal.price, cereal.is_favorite, cereal.rating]
+            "INSERT INTO cereals (name, brand, type, price, is_favorite, rating) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
+            [cereal.name, cereal.brand, cereal.type, cereal.price, cereal.is_favorite, cereal.rating]
         )
         return newCereal
     } catch (error) {
