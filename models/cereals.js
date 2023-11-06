@@ -19,7 +19,20 @@ const getCereal = async (id) => {
     }
 }
 
+const createCereal = async (cereal) => {
+    try {
+        const newCereal = await db.one(
+            "INSERT INTO cereals (name, brand, Type, price, is_favorite) VALUES ($1, $2, $3, $4, $5) RETURNING *",
+            [cereal.name, cereal.brand, cereal.Type, cereal.price, cereal.is_favorite]
+        )
+        return newCereal
+    } catch (error) {
+        return error
+    }
+}
+
 module.export = {
     getAllCereals,
-    getCereal
+    getCereal,
+    createCereal
 }
