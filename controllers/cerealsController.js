@@ -6,6 +6,7 @@ const {
   deleteCereal,
   updateCereal,
 } = require("../models/cereals");
+
 const cereals = express.Router();
 
 cereals.get("/", async (req, res) => {
