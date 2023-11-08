@@ -11,5 +11,5 @@ Type TEXT,
 price NUMERIC,
 is_favorite BOOLEAN, 
 rating INTEGER CHECK (rating >= 1 AND rating <= 5),
-data JSONB
+image_url TEXT
 );
