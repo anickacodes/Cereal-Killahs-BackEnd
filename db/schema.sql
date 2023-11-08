@@ -10,5 +10,6 @@ brand TEXT NOT NULL,
 Type TEXT,
 price NUMERIC,
 is_favorite BOOLEAN, 
-rating INTEGER CHECK (rating >= 1 AND rating <= 5)
+rating INTEGER CHECK (rating >= 1 AND rating <= 5),
+data JSONB
 );
