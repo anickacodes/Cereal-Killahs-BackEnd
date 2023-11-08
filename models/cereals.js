@@ -3,6 +3,7 @@ const db = require('../db/dbConfig');
 const getAllCereals = async () => {
     try {
         const allCereals = await db.any("SELECT * FROM cereals");
+       
         return allCereals
     } catch (error) {
         return error
@@ -22,8 +23,8 @@ const getCereal = async (id) => {
 const createCereal = async (cereal) => {
     try {
         const newCereal = await db.one(
-            "INSERT INTO cereals (name, brand, type, price, is_favorite, rating) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
-            [cereal.name, cereal.brand, cereal.type, cereal.price, cereal.is_favorite, cereal.rating]
+            "INSERT INTO cereals (name, brand, type, price, is_favorite, rating, data) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *",
+            [cereal.name, cereal.brand, cereal.type, cereal.price, cereal.is_favorite, cereal.rating, cereal.data.image]
         )
         return newCereal
     } catch (error) {
