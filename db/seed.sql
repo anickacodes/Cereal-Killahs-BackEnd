@@ -2,7 +2,7 @@
 
 \c cereals;
 
-INSERT INTO cereals (name, brand, Type, price, is_favorite, rating, image_url) VALUES
+INSERT INTO cereals (name, brand, type, price, is_favorite, rating, image_url) VALUES
 ('Honey Nut Cheerios', 'General Mills', 'Whole Grain', 3.99, true, 4, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmHfqezmU7ymSLZRB0pxV1ezcNlqVpvZS8MMkrJluOrrS-ntjZn1YuR3KT3sveLw7V4co&usqp=CAU'),
 ('Lucky Charms', 'General Mills', 'Marshmallow', 4.29, true, 4, 'https://p7.hiclipart.com/preview/501/751/615/breakfast-cereal-general-mills-lucky-charm-cereal-rice-krispies-treats-lucky-charms-marshmallow-others.jpg'),
 ('Cinnamon Toast Crunch', 'General Mills', 'Sugar', 3.79, false, 3, 'https://www.cinnamontoastcrunch.com/_next/image?url=https%3A%2F%2Fctccmsprod.wpengine.com%2Fwp-content%2Fuploads%2F2022%2F02%2FCTC-Original-New-Packaging-460x460-1.png&w=1080&q=75'),
