@@ -44,6 +44,6 @@ __Search cereals by name:__
 `INSERT INTO cereals (name, brand, type, price, is_favorite, rating, image_url) 
 VALUES ('Blueberry Crunch', 'Berry Bliss', 'Fruit', 4.79, true, 3, 'https://example.com/blueberry-crunch-image.png');`
 
-
+`DELETE FROM cereals WHERE name = 'Froot Loops';`
 
 
